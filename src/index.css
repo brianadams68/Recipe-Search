@@ -84,3 +84,22 @@
   outline: none;
   cursor: pointer;
 }
+
+/* Media queries for mobile */
+@media (max-width: 767px) {
+  .Ingredients {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .Ingredients:hover {
+    width: 100%;
+    height: auto;
+  }
+
+  .InputWrapper input {
+    width: calc(100% - 40px);
+    max-width: none;
+  }
+}
