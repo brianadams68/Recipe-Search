@@ -3,12 +3,17 @@ import Recipe from "./Recipe";
 
 function RecipeList({ ingredientsList }) {
   return (
-    <div className="Wrapper">
-      {ingredientsList.map(({ recipe }) => (
-        <Recipe key={recipe.label} {...recipe} />
-      ))}
+    <div className="container">
+      <div className="row justify-content-center">
+        {ingredientsList.map(({ recipe }) => (
+          <div key={recipe.label} className="col-md-3 mb-3">
+            <Recipe {...recipe} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default RecipeList;
+

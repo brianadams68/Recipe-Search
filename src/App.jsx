@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Input from "./Components/Input";
 import Loading from "./Components/Loading";
 import RecipeList from "./Components/RecipeList";
-import "./App.css";
 
 function App() {
   const [ingredientsList, updateIngredientsList] = useState([]);
@@ -29,12 +28,12 @@ function App() {
   };
 
   useEffect(() => {
-    searchForRecipe("");
+    searchForRecipe("Gaspacho");
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App w-auto">
+      <header className="App-header p-4 bg-primary-subtle text-dark">
         <Input onSearch={searchForRecipe} />
         {loading && <Loading />}
         <RecipeList ingredientsList={ingredientsList} />
