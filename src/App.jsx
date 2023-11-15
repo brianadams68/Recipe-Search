@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App w-auto bg-success custom-gradient">
+    <div className="App">
       <header className="App-header p-4 text-dark">
         <NavBar onSearch={searchForRecipe} />
         {loading && <Loading />}
