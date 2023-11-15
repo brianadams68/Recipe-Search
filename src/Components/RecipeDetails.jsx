@@ -1,13 +1,12 @@
 import React from "react";
 
-function Recipe({ label, image, ingredientLines }) {
-  
+function RecipeDetails({ recipe }) {
   return (
     <div className="Ingredients bg-success-subtle bg-gradient">
-      <span>{label}</span>
-      <img src={image} alt={label} />
+      <span>{recipe.label}</span>
+      <img src={recipe.image} alt={recipe.label} />
       <div className="Steps">
-        {ingredientLines.map((step, index) => (
+        {recipe.ingredientLines.map((step, index) => (
           <li key={index}>{step}</li>
         ))}
       </div>
@@ -15,4 +14,4 @@ function Recipe({ label, image, ingredientLines }) {
   );
 }
 
-export default Recipe;
+export default RecipeDetails;

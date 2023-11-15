@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Input from "./Components/Input";
+import NavBar from "./Components/NavBar";
 import Loading from "./Components/Loading";
 import RecipeList from "./Components/RecipeList";
 
@@ -32,9 +32,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App w-auto">
-      <header className="App-header p-4 bg-primary-subtle text-dark">
-        <Input onSearch={searchForRecipe} />
+    <div className="App w-auto bg-success custom-gradient">
+      <header className="App-header p-4 text-dark">
+        <NavBar onSearch={searchForRecipe} />
         {loading && <Loading />}
         <RecipeList ingredientsList={ingredientsList} />
       </header>
