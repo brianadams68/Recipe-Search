@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("bg.jpeg");
+  background-image: url("bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@ nav.navbar.scrolled {
   opacity: 0;
 }
 
-.Steps::-webkit-scrollbar{
+.Steps::-webkit-scrollbar {
   display: none;
 }
 
@@ -89,11 +89,6 @@ button {
 
 /* Media queries for mobile */
 @media (max-width: 767px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-  }
-
   .Ingredients {
     width: 100%;
     height: auto;
