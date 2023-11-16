@@ -1,9 +1,13 @@
 import React from "react";
 
-function Recipe({ label, image, ingredientLines }) {
+function Recipe({ label, image, ingredientLines, url }) {
+  const openInNewWindow = () => {
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="Ingredients bg-success-subtle bg-gradient">
-      <span>{label}</span>
+      <span onClick={openInNewWindow} role="button">{label}</span>
       <img src={image} alt={label} />
       <div className="Steps">
         {ingredientLines.map((step, index) => (

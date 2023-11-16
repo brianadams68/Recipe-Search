@@ -1,17 +1,32 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Input({ onSearch }) {
   const inputRef = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleSearch = () => {
     onSearch(inputRef.current.value);
     inputRef.current.value = "";
   };
 
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="container">
-      <nav className="navbar">
+      <nav className={`navbar fixed-top ${scrolled ? "scrolled" : ""}`}>
         <div className="container-fluid justify-content-center">
           <form className="d-flex" role="search">
             <input
@@ -24,7 +39,7 @@ function Input({ onSearch }) {
             <button
               className="btn btn-light text-secondary ms-2 border rounded p-1"
               type="button"
-              style={{ width: '100px', height: "50px" }}
+              style={{ width: "100px", height: "50px" }}
               onClick={handleSearch}
             >
               Search

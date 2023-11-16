@@ -3,7 +3,7 @@
 }
 
 .App::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -15,6 +15,16 @@
   background-repeat: no-repeat;
   opacity: 0.5;
   z-index: -1;
+}
+
+nav.navbar.scrolled {
+  padding: 10px 0;
+  background-color: #121212;
+  opacity: 0.9;
+}
+
+.container.scrolled {
+  overflow-y: hidden;
 }
 
 .Ingredients {
@@ -54,12 +64,16 @@
 }
 
 .Steps {
-  overflow-y: scroll;
+  overflow-y: auto;
   position: relative;
   top: 30px;
   visibility: hidden;
   transition: 0.3s;
   opacity: 0;
+}
+
+.Steps::-webkit-scrollbar{
+  display: none;
 }
 
 .Ingredients:hover .Steps {
@@ -75,6 +89,11 @@ button {
 
 /* Media queries for mobile */
 @media (max-width: 767px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+
   .Ingredients {
     width: 100%;
     height: auto;
