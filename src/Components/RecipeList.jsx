@@ -22,7 +22,7 @@ function RecipeList({ ingredientsList }) {
     <div className={`container mt-5 ${scrolled ? "scrolled" : ""}`}>
       <div className="row justify-content-center">
         {ingredientsList.map(({ recipe }) => (
-          <div key={recipe.label} className="col-md-3 mb-3">
+          <div key={recipe.label} className="col-md-auto mb-3">
             <Recipe {...recipe} />
           </div>
         ))}

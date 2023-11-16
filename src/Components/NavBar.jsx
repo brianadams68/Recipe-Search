@@ -26,15 +26,19 @@ function Input({ onSearch }) {
 
   return (
     <div className="container">
-      <nav className={`navbar fixed-top ${scrolled ? "scrolled" : ""}`}>
-        <div className="container-fluid justify-content-center">
-          <form className="d-flex" role="search">
+      <nav
+        className={`navbar navbar-expand-lg fixed-top ${
+          scrolled ? "scrolled" : ""
+        }`}
+      >
+        <div className="container-fluid d-flex justify-content-center">
+        <form className="d-flex" role="search">
             <input
               ref={inputRef}
               type="text"
               className="form-control rounded text-secondary"
               placeholder="Search for recipe"
-              style={{ width: "400px", height: "50px" }}
+              style={{ width: "100%", maxWidth: "400px", height: "50px" }}
             />
             <button
               className="btn btn-light text-secondary ms-2 border rounded p-1"
